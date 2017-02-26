@@ -10,13 +10,25 @@ function randomNumber() {
 		return randomNumber
 	}
 
-	var selectedNumbers = []
+	var selectedNumbers = [];
+	var i= 0;
 
-	for (let i=0; i < 6; i++) {
-		selectedNumbers.push(generateNumber(1, 10));
+	while (selectedNumbers.length < 6) {
+  		var checkNumber = generateNumber(1, 10);
+  
+		  if (selectedNumbers.includes(checkNumber)) {
+		    var checkNumber = generateNumber(1, 10);
+		  } else {
+		    selectedNumbers.push(checkNumber);
+		    i++;
+		  }
 	}
+
+	/*Prevented repeats in selectedNumbers array using while loop - but not enitrely convinced this is the 'correct' way to do this. 
+	**Also need to check includes() support as ES6 feature. indexOf() possible alternative.*/
+
+
 	/*Need to place each number in the array in it's own div or span element*/
-	/*Perform check to stop repeated numbers*/
 	document.querySelector('.numbers').innerHTML = selectedNumbers[0] + ' ' + selectedNumbers[1] + ' ' + selectedNumbers[2] + ' ' + selectedNumbers[3] + ' ' + selectedNumbers[4] + ' ' + selectedNumbers[5];
 }
 
