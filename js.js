@@ -4,21 +4,27 @@ button.addEventListener("click", randomNumber);
 
 function randomNumber() {
 
+	const selectedNumbers = [];
+	let i = 0;
+
 	function generateNumber() {
-		return Math.floor(Math.random() * 59 + 1);
+		let randomNumber = Math.floor(Math.random() * 59 + 1);
+		let string = randomNumber.toString();
+
+		if (randomNumber < 10) {
+			return "0" + string 
+		} else {
+			return string
+		}
 	}
 
-	var selectedNumbers = [];
-	var i= 0;
-
 	while (selectedNumbers.length < 6) {
-		var newNumber = generateNumber();
+		let newNumber = generateNumber();
 
 		if (selectedNumbers.indexOf(newNumber) === -1) {
 			selectedNumbers.push(newNumber);
 			document.querySelector('.ball-' + (i + 1)).innerHTML = selectedNumbers[i]
 		    i++;
 		}
-
 	}
 }
