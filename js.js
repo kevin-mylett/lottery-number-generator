@@ -16,10 +16,9 @@ function randomNumber() {
 
 		if (selectedNumbers.indexOf(newNumber) === -1) {
 			selectedNumbers.push(newNumber);
+			document.querySelector('.ball-' + (i + 1)).innerHTML = selectedNumbers[i]
 		    i++;
-		} 
-	}
+		}
 
-	/*Need to place each number in the array in it's own div or span element*/
-	document.querySelector('.numbers').innerHTML = selectedNumbers[0] + ' ' + selectedNumbers[1] + ' ' + selectedNumbers[2] + ' ' + selectedNumbers[3] + ' ' + selectedNumbers[4] + ' ' + selectedNumbers[5];
+	}
 }
