@@ -8,10 +8,10 @@ function randomNumber() {
 	let i = 0;
 
 	function generateNumber() {
-		let randomNumber = Math.floor(Math.random() * 59 + 1);
-		let string = randomNumber.toString();
+		let randomNum = Math.floor(Math.random() * 59 + 1);
+		let string = randomNum.toString();
 
-		if (randomNumber < 10) {
+		if (randomNum < 10) {
 			return "0" + string 
 		} else {
 			return string
