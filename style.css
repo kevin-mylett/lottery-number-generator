@@ -14,4 +14,18 @@ html, body {
 	flex-direction: column;
 	height: 100%;
 	min-width: 960px;
+	margin: 0 auto;
+}
+
+.numbers {
+	margin: 50px 0px;
+}
+
+.balls {
+	display: inline-block;
+	font-size: 5em;
+	margin: 0 50px;
+	padding: 25px;
+	border: 3px solid #eee;
+	border-radius: 50% 50%;
 }
