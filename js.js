@@ -6,6 +6,7 @@ function randomNumber() {
 
 	let selectedNumbers = [];
 	let i = 0;
+	var called = false;
 
 	//Generate a random number
 	function generateNumber() {
@@ -30,6 +31,16 @@ function randomNumber() {
 		    i++;
 		}
 	}
+
+	//Create Sort Button
+	//Need to run this just once!
+	var button = document.createElement("button");
+	button.className +='sortBtn';
+	var node = document.createTextNode("Sort Numbers");
+	button.appendChild(node);
+
+	var elem = document.querySelector('.buttons');
+	elem.appendChild(button);
 
 	// Sort Numbers 
 	const sortButton = document.querySelector('.sortBtn');

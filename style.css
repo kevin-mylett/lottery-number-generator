@@ -33,9 +33,16 @@ html, body {
 	border-radius: 50%;
 }
 
+.buttons {
+	display: flex;
+	flex-direction: column;
+}
+
 .generateBtn, .sortBtn {
 	background-color: transparent;
 	padding: 10px 25px;
 	color: #fff;
 	border: 2px solid #fff;
+	text-transform: uppercase;
+	margin: 20px 0px;
 }
