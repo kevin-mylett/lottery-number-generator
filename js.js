@@ -1,6 +1,5 @@
 
-const button = document.querySelector('.generateBtn');
-button.addEventListener("click", randomNumber);
+let runOnce = false;
 
 //Generate a random number
 function generateNumber() {
@@ -42,18 +41,18 @@ function randomNumber() {
 		numbersContainer.appendChild(ball);
 	});
 
-
-	console.log(selectedNumbers);
-
 	//Create Sort Button
-	//Need to run this just once!
-	var button = document.createElement("button");
-	button.className +='sortBtn';
-	var node = document.createTextNode("Sort Numbers");
-	button.appendChild(node);
+	if (!runOnce) {
+		let button = document.createElement("button");
+		button.className +='sortBtn';
+		button.innerHTML = 'Sort Numbers';
 
-	var elem = document.querySelector('.buttons');
-	elem.appendChild(button);
+		const buttonsDiv = document.querySelector('.buttons');
+		buttonsDiv.appendChild(button);
+
+		// Update flag so function is run once
+		runOnce = true;
+	}
 
 	function sortNumbers() {
 		selectedNumbers = selectedNumbers.sort(function (a, b) {
@@ -61,16 +60,19 @@ function randomNumber() {
 				return 1;
 			} else {
 				return -1;
-		}});
+			}
+		});
 
 		for (var i = 0; i < 6; i++) {
 			document.querySelector('.ball-' + (i + 1)).innerHTML = selectedNumbers[i];
 		}
 	}
 
-	// Sort Numbers 
+	// //Sort Numbers 
 	const sortButton = document.querySelector('.sortBtn');
 	sortButton.addEventListener('click', sortNumbers);
+
 }
 
-
+const button = document.querySelector('.generateBtn');
+button.addEventListener("click", randomNumber);
